@@ -1,18 +1,35 @@
-//your code here
+Particle[] star;
 void setup()
 {
-	//your code here
+	size(600,600);
+	background(192);
+	star = new Particle[1000];
+	for(int i = 0; i<star.length;i++){
+		star[i] = new Particle();
+	}
 }
 void draw()
 {
-	//your code here
+	for(int i = 0; i < star.length; i++){
+		star[i].move();
+		star[i].show();
+	}
 }
 class Particle
 {
-	//your code here
+	double x,y,speed,angle;
+	int myColor;
+	Particle(){
+		x = 300;
+		y = 300;
+		speed = (Math.random()*6)+1;
+		angle = (Math.random()*(2*Math.PI));
+		myColor = 255;
+	}
+
 }
 
-class OddballParticle //inherits from Particle
+class OddballParticle extends Particle
 {
 	//your code here
 }
